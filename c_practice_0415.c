@@ -1,5 +1,56 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
+//5.编写代码实现，模拟用户登录情景，并且只能登陆三次。
+//（只允许输入三次密码，如果密码正确则提示登陆成功，如果三次均输入错误，则退出程序）
+//#include<stdio.h>
+//int main()
+//{
+//	char password[20] = { 0 };
+//	int i = 0;
+//	printf("please input your password:>>\n");
+//	for (i = 0; i < 3; i++)
+//	{
+//		scanf("%s", password);
+//		if (strcmp(password,"123456") == 0)
+//		{
+//			printf("Successful login!\n");
+//		}
+//		else
+//		{
+//			printf("Login failed,you will have %d times chance input password again!\n", 3 - i);
+//		}
+//	}
+//	printf("Log out!\n");
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<Windows.h>
+////welcome to new world!
+////*********************
+////w*******************!
+////we*****************d!
+////......
+////welcome to new world!
+//int main()
+//{
+//	char arr1[] = "welcome to new world!";
+//	char arr2[] = "*********************";
+//	int left = 0;
+//	//int right = sizeof(arr1) / sizeof(arr1[0]) - 2;
+//	int right = strlen(arr1) - 1;
+//	while (left <= right)
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(1000);
+//		system("cls");
+//		left++;
+//		right--;
+//	}
+//	printf("%s\n", arr2);
+//	return 0;
+//}
 
 //int main()
 //{
