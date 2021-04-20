@@ -1,35 +1,159 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-#include<math.h>
-int main()
-{
-	int i = 0;
-	for (i = 0; i <= 100000; i++)
-	{
-		int sum = 0;
-		//判断i是否为自幂数
-		int count = 1;
-		int temp = i;
-		//1.计算i的位数
-		while (temp/=10)
-		{
-			count++;
-		}
-		//2.获得i的每一位，计算每一位的n次方和
-		temp = i;
-		while (temp)
-		{
-			sum += pow(temp % 10, count);
-			temp /= 10;
-		}
-		//3.比较并打印
-		if (i == sum)
-		{
-			printf("%d ", i);
-		}
-	}
-	return 0;
-}
+//*
+// *
+//  *
+//   *
+
+//    *
+//  **
+//***
+//  **
+//    *
+
+//  *
+// * *
+//* * *
+// * *
+//  *
+//int main()
+//{
+//    int line = 0;
+//    int i = 0;
+//    while (scanf("%d", &line) != EOF)
+//    {
+//        getchar();
+//        for (i = 0; i < line + 1; i++)//上半部分
+//        {
+//            int j = 0;
+//            for (j = 0; j < line + 1 - i; j++)
+//            {
+//                printf("* ");
+//            }
+//            printf("\n");
+//        }
+//        for (i = 0; i < line; i++)//下半部分
+//        {
+//            int j = 0;
+//            for (j = 0; j < i + 2; j++)
+//            {
+//                printf("* ");
+//            }
+//            printf("\n");
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+
+//* * * * *
+// * * * *
+//  * * *
+//   * *
+//    *
+
+//   * 
+//  * *
+// * * *
+//* * * *
+//int main()
+//{
+//    int line = 0;
+//    int i = 0;
+//    while ((scanf("%d", &line)) != EOF)
+//    {
+//        getchar();
+//        for (i = 0; i < line; i++)
+//        {
+//            int j = 0;
+//            for (j = 0; j < line - 1 - i; j++)
+//            {
+//                printf(" ");
+//            }
+//            for (j = 0; j <= i; j++)
+//            {
+//                printf("* ");
+//            }
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//    *
+//   ***
+//  *****
+// *******
+//*********
+// *******
+//  *****
+//   ***
+//    *
+//int main()
+//{
+//    int line = 0;
+//	int i = 0;
+//	scanf("%d", &line);
+//	for (i = 0; i < line; i++)//打印菱形上半部分
+//	{
+//		int j = 0;
+//		for (j = 0; j < line - 1 - i; j++)//先打印空格 
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 2 * i - 1; j++)//然后打印*
+//		{
+//			printf("*");
+//		}
+//		printf("\n");//打印换行
+//	}
+//	for (i = 0; i < line - 1; i++)//打印菱形下半部分
+//	{
+//		int j = 0;
+//		for (j = 0; j < i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < (line - 1 - i) * 2 - 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include<math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		int sum = 0;
+//		//判断i是否为自幂数
+//		int count = 1;
+//		int temp = i;
+//		//1.计算i的位数
+//		while (temp/=10)
+//		{
+//			count++;
+//		}
+//		//2.获得i的每一位，计算每一位的n次方和
+//		temp = i;
+//		while (temp)
+//		{
+//			sum += pow(temp % 10, count);
+//			temp /= 10;
+//		}
+//		//3.比较并打印
+//		if (i == sum)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
 
 //int main()
 //{
