@@ -1,5 +1,30 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
 #include<stdio.h>
+
+
+
+int Add(int x, int y)
+{
+	return x + y;
+}
+int main()
+{
+	int arr[10] = { 0 };
+	int(*p)[10] = &arr;//取出数组的地址
+
+	int(*p)(int, int) = &Add;//取出函数的地址
+	int(*pfArr[5])(int, int);//函数指针数组
+
+	int(*(*ppfArr)[5])(int, int);//指向函数指针数组的指针 
+	//先写(*ppfArr)表示指针 再写 int(* [5])(int,int) 表示该指针指向的类型是一个数组，
+	//数组的类型是 int(*)(int,int)函数指针
+	// 
+	//ppfArr是一个数组指针，指针指向的数组有5个元素
+	//指向的数组类型是 int(*)(int,int)函数指针
+	//该函数指针指向的函数有两个参数，均是int类型，函数返回类型也是int
+	return 0;
+}
+
 //void cal_menu()
 //{
 //	printf("*****************************\n");
@@ -135,72 +160,71 @@
 //	return 0;
 //}
 
-void cal_menu()
-{
-	printf("*****************************\n");
-	printf("*****   1.Add     2.Sub  ****\n");
-	printf("*****   3.Mul     4.Div  ****\n");
-	printf("******    0.exit     ********\n");
-	printf("*****************************\n");
-}
-int Add(int x, int y)
-{
-	return x + y;
-}
-int Sub(int x, int y)
-{
-	return x - y;
-}
-int Mul(int x, int y)
-{
-	return x * y;
-}
-int Div(int x, int y)
-{
-	return x / y;
-}
-void Calc(int (*pf)(int,int))
-{
-	int x = 0;
-	int y = 0;
-	printf("请输入两个操作数:>>\n");
-	scanf("%d%d", &x, &y);
-	printf("%d\n", pf(x, y));
-}
-int main()
-{
-	int input;//根据菜单提示输入操作符
-	
-	do
-	{
-		cal_menu();
-		printf("请选择操作符:>>\n");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			Calc(Add);
-			break;
-		case 2:
-			Calc(Sub);
-			break;
-		case 3:
-			Calc(Mul);
-			break;
-		case 4:
-			Calc(Div);
-			break;
-		case 0:
-			printf("退出!\n");
-			break;
-		default:
-			printf("选择错误!\n");
-			break;
-		}
-	} while (input);
-	return 0;
-}
-
+//void cal_menu()
+//{
+//	printf("*****************************\n");
+//	printf("*****   1.Add     2.Sub  ****\n");
+//	printf("*****   3.Mul     4.Div  ****\n");
+//	printf("******    0.exit     ********\n");
+//	printf("*****************************\n");
+//}
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//int Sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int Mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int Div(int x, int y)
+//{
+//	return x / y;
+//}
+//void Calc(int (*pf)(int,int))
+//{
+//	int x = 0;
+//	int y = 0;
+//	printf("请输入两个操作数:>>\n");
+//	scanf("%d%d", &x, &y);
+//	printf("%d\n", pf(x, y));
+//}
+//int main()
+//{
+//	int input;//根据菜单提示输入操作符
+//	
+//	do
+//	{
+//		cal_menu();
+//		printf("请选择操作符:>>\n");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			Calc(Add);
+//			break;
+//		case 2:
+//			Calc(Sub);
+//			break;
+//		case 3:
+//			Calc(Mul);
+//			break;
+//		case 4:
+//			Calc(Div);
+//			break;
+//		case 0:
+//			printf("退出!\n");
+//			break;
+//		default:
+//			printf("选择错误!\n");
+//			break;
+//		}
+//	} while (input);
+//	return 0;
+//}
 
 //#include<stdio.h>
 //int Add(int x, int y)
