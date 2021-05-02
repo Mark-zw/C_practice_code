@@ -1,12 +1,87 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
 #include<stdio.h>
-#include<string.h>
-#include<assert.h>
-//判断一个字符串是否由另外一个字符串左旋得到的
-// 方法二：思路 字符串abcdef后面追加字符串其本身可以得到
-// abcdefabcdef  这个追加后的字符串实际上就包含了方法一中所有左旋的结果
-//
+//#define ROW 3
+//#define COL 3
+//int is_find(int arr[ROW][COL], int* px, int* py, int k)
+//{
+//	int x = 0;
+//	int y = *py - 1;
+//	while (x < *px && y >= 0)
+//	{
+//		if (k > arr[x][y])
+//		{
+//			x++;
+//		}
+//		else if (k < arr[x][y])
+//		{
+//			y--;
+//		}
+//		else
+//		{
+//			*px = x;
+//			*py = y;
+//			return 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[ROW][COL] = { {1,2,3},{4,5,6},{7,8,9} };
+//	int k = 0;
+//	int x = ROW;
+//	int y = COL;
+//	scanf("%d", &k);
+//	int ret = is_find(arr, &x, &y, k);
+//	if (ret == 1)
+//	{
+//		printf("找到了\n");
+//		printf("下标是：%d,%d\n", x, y);
+//	}
+//	else
+//	{
+//		printf("找不到\n");
+//	}
+//	return 0;
+//}
 
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+////判断一个字符串是否由另外一个字符串左旋得到的
+//// 方法二：思路 字符串abcdef后面追加字符串其本身可以得到
+//// abcdefabcdef  这个追加后的字符串实际上就包含了方法一中所有左旋的结果
+//int is_levor_arr(char* arr1, char* arr2)
+//{
+//	assert(arr1);
+//	assert(arr2);
+//	int len1 = strlen(arr1);
+//	int len2 = strlen(arr2);
+//	if (len1 != len2)//两个字符串长度不相等，肯定不是左旋的结果
+//	{
+//		return 0;
+//	}
+//	//1.在字符串arr1后面追加其本身
+//	strncat(arr1, arr1, len1);
+//	//2.判断arr2是否为arr1的子集
+//	if (strstr(arr1, arr2) == NULL)
+//	{
+//		return 0;
+//	}
+//	return 1;
+//}
+//
+//int main()
+//{
+//	char arr1[30] = "abcdefgh";
+//	char arr2[] = "cdefghab";
+//	int ret = is_levor_arr(arr1, arr2);
+//	if (ret == 1)
+//		printf("Yes\n");
+//	else
+//		printf("No\n");
+//	return 0;
+//}
 
 //void reverse(char* left, char* right)
 //{
