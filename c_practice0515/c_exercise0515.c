@@ -1,18 +1,133 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
 #include<stdio.h>
-int main()
-{
-	int i = 0;
-	int n = 1;
-	int m = 0;
-	for (i = 0; i < 9; i++)
-	{
-		m = (n+1) * 2 ;
-		n = m;
-	}
-	printf("第一天共摘下%d个桃子。", m);
-	return 0;
-}
+
+
+//#include<math.h>
+//double f(double x)
+//{
+//	return 2 * pow(x, 3) - 4 * pow(x, 2) + 3 * x - 6;
+//}
+//double f1(double x)
+//{
+//	return 6 * pow(x, 2) - 8 * x + 3;
+//}
+//int main()
+//{
+//	double x = 0;
+//	scanf("%lf", &x);
+//	do
+//	{
+//		x = x - f(x) / f1(x);
+//	} while (fabs(f(x)) > 1e-5);
+//	printf("%lf", x);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	char i, j, k;//假设A,B,C分别对战i,j,k
+//	for (i = 'X'; i <= 'Z'; i++)
+//	{
+//		for (j = 'X'; j <= 'Z'; j++)
+//		{
+//			for (k = 'X'; k <= 'Z'; k++)
+//			{
+//				if ((i != j) && (i != k) && (j != k))
+//				{
+//					if ((i != 'X') && (k != 'X') && (k != 'Z'))
+//						printf("A对战%c\nB对战%c\nC对战%c\n", i, j, k);
+//				}
+//			}
+//		}
+//	}
+//}
+
+//#include<stdio.h>
+////打印菱形图案
+//int main()
+//{
+//	int n = 0;//确定菱形行号
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		//getchar();//读取空格符
+//		//思路：
+//		//1、先打印菱形上半部分
+//
+//		int i = 0;
+//		int j = 0;
+//		for (i = 0; i < n; i++)
+//		{
+//			//    1.先打印空格
+//			for (j = 0; j < n - 1 - i; j++)
+//			{
+//				printf(" ");
+//			}
+//			//    2.再打印*  之后进行换行
+//			for (j = 0; j < 2 * i + 1; j++)
+//			{
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//
+//		//2、在打印菱形下半部分
+//		for (i = 0; i < n - 1; i++)
+//		{
+//			//    1.先打印空格
+//			for (j = 0; j <= i; j++)
+//			{
+//				printf(" ");
+//			}
+//			//    2.再打印*  之后进行换行	
+//			for (j = 0; j < 2 * (n - 1 - i) - 1; j++)
+//			{
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<math.h>
+////迭代法求平方根的值
+//int main()
+//{
+//	double a = 0;
+//	double x1 = 0;
+//	double x2 = 0;
+//	int i = 0;
+//	//scanf("%lf", &a);
+//	for (a = 1; a < 100; a++)
+//	{
+//		x1 = a / 2;
+//		x2 = (x1 + a / x1) / 2;
+//		do
+//		{
+//			x1 = x2;
+//			x2 = (x1 + a / x1) / 2;
+//		} while (fabs(x1 - x2) > 1e-5);
+//		printf("%.0lf的平方根是：%lf\n", a,x1);
+//		//a = a + 1;
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int n = 1;
+//	int m = 0;
+//	for (i = 0; i < 9; i++)
+//	{
+//		m = (n+1) * 2 ;
+//		n = m;
+//	}
+//	printf("第一天共摘下%d个桃子。", m);
+//	return 0;
+//}
 
 ////球自由落下反弹一半高度
 //int main()
