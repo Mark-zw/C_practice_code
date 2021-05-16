@@ -2,6 +2,17 @@
 #include<stdio.h>
 
 
+//void Print(char* str)
+//{
+//	printf("%s", str);
+//}
+//int main()
+//{
+//	void (*p)(char*) = Print;
+//	(*p)("abcdef");
+//	return 0;
+//}
+
 //int main()
 //{
 //	int arr[5];
