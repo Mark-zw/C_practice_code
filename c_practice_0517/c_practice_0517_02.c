@@ -2,12 +2,43 @@
 #include<stdio.h>
 int main()
 {
-	int aa[2][5] = { 1,2,3,4,5,6,7,8,9,10 };
-	int* ptr1 = (int*)(&aa + 1);
-	int* ptr2 = (int*)(*(aa + 1));
-	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+	char* c[] = { "ENTER","NEW","POINT","FIRST" };
+	char** cp[] = { c + 3, c + 2, c + 1, c };
+	char*** cpp = cp;
+    printf("%s\n",**++cpp); 
+	//"POINT"
+	printf("%s\n",*--*++cpp+3); 
+	//"ER"
+	printf("%s\n",*cpp[-2]+3); 
+	//"ST"
+	printf("%s\n", cpp[-1][-1]+1);
+	//"EW"
+
 	return 0;
 }
+
+//int main()
+//{
+//	char* a[] = { "work","at","alibaba" };
+//	char** pa = a;
+//	pa++;
+//	//pa指向a[1]的地址，a[1]存放"at"常量字符串的首地址
+//	printf("%s\n", *pa);
+//	//*pa找到a[1]，打印 at
+//	return 0;
+//}
+
+//int main()
+//{
+//	int aa[2][5] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* ptr1 = (int*)(&aa + 1);
+//	//&aa + 1 跳过整个数组，指向数组后面的地址
+//	int* ptr2 = (int*)(*(aa + 1));
+//	//*(aa + 1) 等价与aa[1]，第二行首元素地址
+//	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+//	//10,5
+//	return 0;
+//}
 
 //int main()
 //{
