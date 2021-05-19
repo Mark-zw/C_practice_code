@@ -1,51 +1,51 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
-#include<stdio.h>
-#include<assert.h>
-int my_strcmp(const char* p1,const char* p2)
-{
-	assert(p1 && p2);
-	while (*p1 == *p2)
-	{
-		if (*p1 == '\0')
-		{
-			return 0;
-		}
-		p1++;
-		p2++;
-	}
-
-	//方法一：vs实现的方式
-	//if (*p1 > *p2)
-	//{
-	//	return 1;
-	//}
-	//else
-	//{
-	//	return -1;
-	//}
-
-	//方法二：linux下gcc实现方式
-	return *p1 - *p2;
-}
-
-int main()
-{
-	char* p1 = "abcdef";
-	char* p2 = "abqwt";
-	if (my_strcmp(p1, p2) > 0)
-	{
-		printf("%s > %s\n", p1, p2);
-	}
-	else if (my_strcmp(p1, p2) == 0)
-	{
-		printf("%s = %s\n", p1, p2);
-	}
-	else
-	{
-		printf("%s < %s\n", p1, p2);
-	}
-	return 0;
-}
+//#include<stdio.h>
+//#include<assert.h>
+//int my_strcmp(const char* p1,const char* p2)
+//{
+//	assert(p1 && p2);
+//	while (*p1 == *p2)
+//	{
+//		if (*p1 == '\0')
+//		{
+//			return 0;
+//		}
+//		p1++;
+//		p2++;
+//	}
+//
+//	//方法一：vs实现的方式
+//	//if (*p1 > *p2)
+//	//{
+//	//	return 1;
+//	//}
+//	//else
+//	//{
+//	//	return -1;
+//	//}
+//
+//	//方法二：linux下gcc实现方式
+//	return *p1 - *p2;
+//}
+//
+//int main()
+//{
+//	char* p1 = "abcdef";
+//	char* p2 = "abqwt";
+//	if (my_strcmp(p1, p2) > 0)
+//	{
+//		printf("%s > %s\n", p1, p2);
+//	}
+//	else if (my_strcmp(p1, p2) == 0)
+//	{
+//		printf("%s = %s\n", p1, p2);
+//	}
+//	else
+//	{
+//		printf("%s < %s\n", p1, p2);
+//	}
+//	return 0;
+//}
 
 //#include<assert.h>
 //char* my_strcat(char* dest, const char* src)
