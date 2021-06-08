@@ -1,37 +1,102 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
-//5.模拟实现strstr
 #include<stdio.h>
 #include<assert.h>
-char* my_strstr(const char* str1, const char* str2)
-{
-	assert(str1 && str2);
-	char* cur = (char*)str1;
-	char* p1 = NULL;
-	char* p2 = NULL;
-	if (!*str2)
-		return str1;//str2为空字符串的情况
-	while (*cur)
-	{
-		p1 = cur;
-		p2 = str2;
-		while ((*p1 == *p2)&& *p1 && *p2)//*p1、*p2不为\0，且*p1 == *p2
-		{
-			p1++;
-			p2++;
-		}
-		if (!*p2)
-			return cur; //找到了的情况
-		cur++;
-	}
-	return NULL;//找不到的情况
-}
+#include<string.h>
+
 int main()
 {
-	char arr1[] = "abbbcdef";
-	char arr2[] = "bcd";
-	printf("%s\n", my_strstr(arr1, arr2));
+
 	return 0;
 }
+
+//void* my_memmove(void* dest, const void* src, size_t num)
+//{
+//	void* dest_start = dest;
+//	assert(dest && src);
+//	if (dest < src)
+//	{
+//		//从前向后拷贝
+//		while (num--)
+//		{
+//			*(char*)dest = *(char*)src;
+//			dest = (char*)dest + 1;
+//			src = (char*)src + 1;
+//		}
+//	}
+//	else
+//	{
+//		//从后向前拷贝
+//		while (num--)
+//		{
+//			*((char*)dest + num) = *((char*)src + num);
+//		}
+//	}
+//	return dest_start;
+//}
+//int main()
+//{
+//	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int arr2[10] = { 0 };
+//
+//	my_memmove(arr1+2, arr1, 20);
+//	return 0;
+//}
+
+//void* my_memcpy(void* dest, const char* src, size_t num)
+//{
+//	void* dest_start = dest;
+//	assert(dest && src);
+//	while (num--)
+//	{
+//		//*(char*)dest = *(char*)src;
+//		//dest = (char*)dest + 1;//++(char*)dest
+//		//src = (char*)src + 1;//++(char*)src
+//		*((char*)dest)++ = *((char*)src)++;
+//	}
+//	return dest_start;
+//}
+//int main()
+//{
+//	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int arr2[10] = { 0 };
+//
+//	my_memcpy(arr2, arr1, 20);
+//	return 0;
+//}
+
+////5.模拟实现strstr
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strstr(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	char* cur = (char*)str1;
+//	char* p1 = NULL;
+//	char* p2 = NULL;
+//	if (!*str2)
+//		return str1;//str2为空字符串的情况
+//	while (*cur)
+//	{
+//		p1 = cur;
+//		p2 = str2;
+//		while ((*p1 == *p2)&& *p1 && *p2)//*p1、*p2不为\0，且*p1 == *p2
+//		{
+//			p1++;
+//			p2++;
+//		}
+//		if (!*p2)
+//			return cur; //找到了的情况
+//		cur++;
+//	}
+//	return NULL;//找不到的情况
+//}
+//int main()
+//{
+//	char arr1[] = "abbbcdef";
+//	char arr2[] = "bcd";
+//	printf("%s\n", my_strstr(arr1, arr2));
+//	return 0;
+//}
 
 ////4.模拟实现strcat
 //#include<stdio.h>
@@ -171,3 +236,5 @@ int main()
 //	printf("%d\n", len_3);
 //	return 0;
 //}
+
+
