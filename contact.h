@@ -1,38 +1,36 @@
-#pragma once
-
+#define _CRT_SECURE_NO_WARNINGS 1 
 #include<stdio.h>
-#include<string.h>
 #include<stdlib.h>
+#include<string.h>
+//静态的版本
 
-#define MAX_NAME 20
-#define MAX_SEX 10
-#define MAX_TELE 12
-#define MAX_ADDR 30
-
-#define MAX_PEO 1000
-
-#define DEFAULT_SZ 3
-#define INC_SZ 2
-
-typedef struct PeoInfo
+typedef struct PeoInfo//存放个人信息
 {
-	char name[MAX_NAME];
-	char sex[MAX_SEX];
-	int age;
-	char tele[MAX_TELE];
-	char addr[MAX_ADDR];
+	char name[20];//姓名
+	short age;//年龄
+	char sex[7];//性别
+	char tele[12];//电话
+	char address[20];//地址
 }PeoInfo;
+
+#define MAX_SIZE 100
+//创建一个通讯录
 typedef struct Contact
 {
-	//PeoInfo data[MAX_PEO];
-	PeoInfo* data;//指向动态申请的空间
-	int size;//记录当前有效信息的个数
-	int capacity;//记录当前通讯录的最大容量
+	PeoInfo data[MAX_SIZE];//存放100个人信息的数组
+	int size;//表示当前存储个数
 }Contact;
+
 void InitContact(Contact* pc);//初始化
-void AddContact(Contact* pc);//增加
-void PrintContact(const Contact* pc);//打印
-void DelContact(Contact* pc);//删除
-void SearchContact(const Contact* pc);//查找
-void ModifyContact(Contact* pc);//修改
-void DestoryContact(Contact* pc);//销毁
+//打印
+void PrintContact(Contact* pc);
+//增加一个联系人
+void AddContact(Contact* pc);
+//删除一个联系人
+void DelContact(Contact* pc);
+//查找一个联系人---根据姓名查找
+void SearchContact(Contact* pc);
+//修改一个联系人--根据姓名修改
+void ModifyContact(Contact* pc);
+//排序---按照年龄
+void SortContact(Contact* pc);
