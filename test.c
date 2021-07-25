@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
+#define _CRT_SECURE_NO_WARNINGS 1 
 #include"contact.h"
 void menu()
 {
@@ -38,7 +39,7 @@ int main()
 		case DEL:
 			//删除一个联系人
 			DelContact(&con);
-			break; 
+			break;
 		case SEARCH:
 			//查找一个联系人---根据姓名查找
 			SearchContact(&con);
@@ -57,6 +58,8 @@ int main()
 			break;
 		case EXIT:
 			//退出
+			//销毁通讯录
+			DestoryContact(&con);
 			break;
 		default:
 			printf("choose wrong,please try again!\n");
