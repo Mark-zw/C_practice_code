@@ -1,10 +1,33 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
 #include"contact.h"
+//void InitContact(Contact* pc)//初始化
+//{
+//	pc->size = 0;
+//	memset(pc->data, 0, sizeof(pc->data));
+//}
 void InitContact(Contact* pc)//初始化
 {
 	pc->size = 0;
-	memset(pc->data, 0, sizeof(pc->data));
+	pc->capacity = INIT_SIZE;
+	PeoInfo* ptr = (PeoInfo*)malloc(pc->capacity * sizeof(PeoInfo));
+	if (ptr == NULL)
+	{
+		printf("malloc fail!\n");
+		return;
+	}
+	pc->data = ptr;
 }
+
+//销毁通讯录
+void DestoryContact(Contact* pc)
+{
+	free(pc->data);
+	pc->data = NULL;
+	pc->size = 0;
+	pc->capacity = 0;
+	printf("Destory a contact success!\n");
+}
+
 //打印
 void PrintContact(Contact* pc)
 {
@@ -21,19 +44,40 @@ void PrintContact(Contact* pc)
 			pc->data[i].address);
 	}
 }
+//进行扩容检查并扩容
+void CheckCapacity(Contact* pc)
+{
+	//判断是否需要扩容
+	if (pc->size == pc->capacity)
+	{
+		//扩容
+		pc->capacity += 2;
+		PeoInfo* ptr = (PeoInfo*)realloc(pc->data, pc->capacity * sizeof(PeoInfo));
+		if (ptr == NULL)
+		{
+			printf("realloc fail!\n");
+			return;
+		}
+		pc->data = ptr;
+		printf("Increase capacity success!\n");
+	}
+}
 //增加一个联系人
 void AddContact(Contact* pc)
 {
-	//判断是否有空间来添加
-	if (pc->size == MAX_SIZE)
-	{
-		printf("The contact is full!\n");
-		return;
-	}
+	////判断是否有空间来添加
+	//if (pc->size == pc->capacity)
+	//{
+	//	printf("The contact is full!\n");
+	//	return;
+	//}
+	
+	//进行扩容检查并扩容
+	CheckCapacity(pc);
 	printf("please input name:>>");
 	scanf("%s", pc->data[pc->size].name);
 	printf("please input age:>>");
-	scanf("%d", &pc->data[pc->size].age); 
+	scanf("%d", &pc->data[pc->size].age);
 	printf("please input sex:>>");
 	scanf("%s", pc->data[pc->size].sex);
 	printf("please input telephone:>>");
