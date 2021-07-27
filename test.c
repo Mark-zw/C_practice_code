@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
-#define _CRT_SECURE_NO_WARNINGS 1 
 #include"contact.h"
 void menu()
 {
@@ -58,6 +57,8 @@ int main()
 			break;
 		case EXIT:
 			//退出
+			//保存信息到文件
+			SaveContact(&con);
 			//销毁通讯录
 			DestoryContact(&con);
 			break;
